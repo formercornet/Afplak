@@ -4,11 +4,16 @@ import time
 import email.utils
 import uuid
 
+
+
+
 # Your GoDaddy email address and password
 sender_email = "marketing@afplak.com"
-password = ""
+password = "GV$BZ&r2f%Ks"
 
 # The CSV file containing recipient information
+util_date = email.utils.formatdate(localtime=True)
+
 csv_file = "recipients.csv"
 
 # The file to store used emails
@@ -33,11 +38,11 @@ Dear [Name],
 
 Best regards,
 
-Hussain
+Ali
 """
 
 # The rest of the message that follows [Personalized_line1]
-message1 = "My name is Hussain. I own Afplak.com - we're a marketing agency that specializes in e-commerce ads."
+message1 = "My name is Ali. I own Afplak.com - we're a marketing agency that specializes in e-commerce ads."
 message2 = """From my initial look, I truly think that I can help you increase your profitability, looking at your products gave me some great ideas.
 
 I would love to share them with you...are you available over the next few days to schedule a meeting?"""
@@ -93,7 +98,7 @@ for recipient in recipients_noads:
     print(email)
     print(email_body)
     # Add a delay of 120 seconds between each email sent
-    time.sleep(120)
+    time.sleep(60)
 
 for recipient in recipients_ads:
     email = recipient[1].strip()
@@ -111,7 +116,7 @@ for recipient in recipients_ads:
     # Send the email
     email_body = "From: {}\n".format(sender_email) + email_body
     email_body = "To: {}\n".format(email) + email_body
-    email_body = "Date: {}\n".format(email.utils.formatdate(localtime=True)) + email_body
+    email_body = "Date: {}\n".format(util_date) + email_body
     email_body = "Message-ID: <{}@{}>\n".format(str(uuid.uuid1()), sender_email) + email_body
     email_body = "Content-Type: text/plain; charset=UTF-8\n" + email_body
     server.sendmail(sender_email, email, email_body)
@@ -120,7 +125,7 @@ for recipient in recipients_ads:
     print(email)
     print(email_body)
     # Add a delay of 120 seconds between each email sent
-    time.sleep(120)
+    time.sleep(60)
 # Save the list of used emails to the sent file
 with open(sent_file, "w") as file:
     file.write("\n".join(sent_emails))
