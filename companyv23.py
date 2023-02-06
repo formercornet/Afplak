@@ -4,16 +4,12 @@ import time
 import email.utils
 import uuid
 
-
-
-
 # Your GoDaddy email address and password
 sender_email = "marketing@afplak.com"
-password = "GV$BZ&r2f%Ks"
+password = ""
 
-# The CSV file containing recipient information
 util_date = email.utils.formatdate(localtime=True)
-
+# The CSV file containing recipient information
 csv_file = "recipients.csv"
 
 # The file to store used emails
@@ -38,8 +34,9 @@ Dear [Name],
 
 Best regards,
 
-Ali
-"""
+Ali 
+""" 
+# insert signature instead here at line 37!!
 
 # The rest of the message that follows [Personalized_line1]
 message1 = "My name is Ali. I own Afplak.com - we're a marketing agency that specializes in e-commerce ads."
@@ -98,7 +95,7 @@ for recipient in recipients_noads:
     print(email)
     print(email_body)
     # Add a delay of 120 seconds between each email sent
-    time.sleep(60)
+    time.sleep(120)
 
 for recipient in recipients_ads:
     email = recipient[1].strip()
@@ -125,7 +122,7 @@ for recipient in recipients_ads:
     print(email)
     print(email_body)
     # Add a delay of 120 seconds between each email sent
-    time.sleep(60)
+    time.sleep(120)
 # Save the list of used emails to the sent file
 with open(sent_file, "w") as file:
     file.write("\n".join(sent_emails))
