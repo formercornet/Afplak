@@ -92,7 +92,7 @@ for recipient in recipients_noads:
     email_body = "Date: {}\n".format(util_date) + email_body
     email_body = "Message-ID: <{}@{}>\n".format(str(uuid.uuid1()), sender_email) + email_body
     email_body = "Content-Type: text/plain; charset=UTF-8\n" + email_body
-    server.sendmail(sender_email, [email, bcc_email], email_body) #all the above part is for complying withRFC 5322 Guidelines
+    server.sendmail(sender_email, [email, bcc_email], email_body.encode('utf-8')) #all the above part is for complying withRFC 5322 Guidelines
     sent_emails.add(email)
     print(sender_email)
     print(email)
@@ -121,7 +121,7 @@ for recipient in recipients_ads:
     email_body = "Date: {}\n".format(util_date) + email_body
     email_body = "Message-ID: <{}@{}>\n".format(str(uuid.uuid1()), sender_email) + email_body
     email_body = "Content-Type: text/plain; charset=UTF-8\n" + email_body
-    server.sendmail(sender_email, [email, bcc_email], email_body) #all the above part is for complying withRFC 5322 Guidelines
+    server.sendmail(sender_email, [email, bcc_email], email_body.encode('utf-8')) #all the above part is for complying withRFC 5322 Guidelines
     sent_emails.add(email)
     print(sender_email)
     print(email)
