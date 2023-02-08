@@ -82,7 +82,7 @@ for recipient in recipients_noads:
         continue
 
     # Fill in the recipient's name, personalized line 1, and the message in the email template
-    email_body = template.replace("[Name]", name).replace("[Personalized_line1]", personalized_line1).replace("[Message1]", message1).replace("[Message2]", message2).replace("[Personalized_line2]", noads_line)
+    email_body = template.replace("[Name]", name).replace("[Personalized_line1]", personalized_line1).replace("[Message1]", message1).replace("[Message2]", message2).replace("[Personalized_line2]", noads_line).replace("[email_subject]", email_subject)
 
     # Send the email
     email_body = "From: {}\n".format(sender_email) + email_body
@@ -111,7 +111,7 @@ for recipient in recipients_ads:
         continue
 
     # Fill in the recipient's name, personalized line 1, and the message in the email template
-    email_body = template.replace("[Name]", name).replace("[Personalized_line1]", personalized_line1).replace("[Message1]", message1).replace("[Message2]", message2).replace("[Personalized_line2]", ads_line).replace("email_subject", email_subject)
+    email_body = template.replace("[Name]", name).replace("[Personalized_line1]", personalized_line1).replace("[Message1]", message1).replace("[Message2]", message2).replace("[Personalized_line2]", ads_line).replace("[email_subject]", email_subject)
 
     # Send the email
     email_body = "From: {}\n".format(sender_email) + email_body
