@@ -3,6 +3,7 @@ import smtplib
 import time
 import email.utils
 import uuid
+#MIME FRAMEWORK IMPORTED AND USED TO ADD SIGNATURE TO EMAILS INSTEAD OF USING NAMES
 
 # Your GoDaddy email address and password
 sender_email = "marketing@afplak.com"
@@ -34,7 +35,7 @@ Dear [Name],
 
 Best regards,
 
-Ali 
+Hussain
 """ 
 # insert signature instead here at line 37!!
 
