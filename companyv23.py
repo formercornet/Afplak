@@ -3,7 +3,7 @@ import smtplib
 import time
 import email.utils
 import uuid
-#MIME FRAMEWORK IMPORTED AND USED TO ADD SIGNATURE TO EMAILS INSTEAD OF USING NAMES
+#MIME or BASE64 FRAMEWORK IMPORTED AND USED TO ADD SIGNATURE TO EMAILS INSTEAD OF USING NAMES or logo after the names
 
 # Your GoDaddy email address and password
 sender_email = "marketing@afplak.com"
@@ -11,7 +11,7 @@ password = "" #password removed for security reasons!!!
 
 util_date = email.utils.formatdate(localtime=True)
 # The CSV file containing recipient information
-csv_file = "recipients.csv"
+csv_file = "Afplakleadstest.csv"
 
 # The file to store used emails
 sent_file = "sent_emails.txt"
@@ -36,8 +36,10 @@ Dear [Name],
 Best regards,
 
 Hussain
+Marketing Director
+
 """ 
-# insert signature instead here at line 38!!
+# insert LOGO here at line 40!!
 
 # The rest of the message that follows [Personalized_line1]
 message1 = "My name is Hussain. I own Afplak.com - we're a marketing agency that specializes in e-commerce ads."
@@ -77,28 +79,26 @@ for recipient in recipients_noads:
     personalized_line1 = recipient[5].strip()
 
 
-    # Skip this recipient if their email has already been sent
+   # Skip this recipient if their email has already been sent
     if email in sent_emails:
         continue
 
     # Fill in the recipient's name, personalized line 1, and the message in the email template
     email_body = template.replace("[Name]", name).replace("[Personalized_line1]", personalized_line1).replace("[Message1]", message1).replace("[Message2]", message2).replace("[Personalized_line2]", noads_line).replace("[email_subject]", email_subject)
-
+    
     # Send the email
     email_body = "From: {}\n".format(sender_email) + email_body
     email_body = "To: {}\n".format(email) + email_body
-    bcc_email = "afplakmarketing@gmail.com" # replace with bcc'd email address
-    email_body = "Bcc: {}\n".format(bcc_email) + email_body
     email_body = "Date: {}\n".format(util_date) + email_body
     email_body = "Message-ID: <{}@{}>\n".format(str(uuid.uuid1()), sender_email) + email_body
     email_body = "Content-Type: text/plain; charset=UTF-8\n" + email_body
-    server.sendmail(sender_email, [email, bcc_email], email_body.encode('utf-8')) #all the above part is for complying withRFC 5322 Guidelines
+    server.sendmail(sender_email, email, email_body.encode('utf-8')) #all the above part is for complying withRFC 5322 Guidelines
     sent_emails.add(email)
     print(sender_email)
     print(email)
     print(email_body)
     # Add a delay of 120 seconds between each email sent
-    time.sleep(120)
+    time.sleep(20)
 
 for recipient in recipients_ads:
     email = recipient[1].strip()
@@ -116,18 +116,16 @@ for recipient in recipients_ads:
     # Send the email
     email_body = "From: {}\n".format(sender_email) + email_body
     email_body = "To: {}\n".format(email) + email_body
-    bcc_email = "afplakmarketing@gmail.com" # replace with bcc'd email address
-    email_body = "Bcc: {}\n".format(bcc_email) + email_body
     email_body = "Date: {}\n".format(util_date) + email_body
     email_body = "Message-ID: <{}@{}>\n".format(str(uuid.uuid1()), sender_email) + email_body
     email_body = "Content-Type: text/plain; charset=UTF-8\n" + email_body
-    server.sendmail(sender_email, [email, bcc_email], email_body.encode('utf-8')) #all the above part is for complying withRFC 5322 Guidelines
+    server.sendmail(sender_email, email, email_body.encode('utf-8')) #all the above part is for complying withRFC 5322 Guidelines
     sent_emails.add(email)
     print(sender_email)
     print(email)
     print(email_body)
     # Add a delay of 120 seconds between each email sent
-    time.sleep(120)
+    time.sleep(20)
 # Save the list of used emails to the sent file
 with open(sent_file, "w") as file:
     file.write("\n".join(sent_emails))
