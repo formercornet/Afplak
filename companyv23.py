@@ -37,10 +37,10 @@ Best regards,
 
 Hussain
 """ 
-# insert signature instead here at line 37!!
+# insert signature instead here at line 38!!
 
 # The rest of the message that follows [Personalized_line1]
-message1 = "My name is Ali. I own Afplak.com - we're a marketing agency that specializes in e-commerce ads."
+message1 = "My name is Hussain. I own Afplak.com - we're a marketing agency that specializes in e-commerce ads."
 message2 = """From my initial look, I truly think that I can help you increase your profitability, looking at your products gave me some great ideas.
 
 I would love to share them with you...are you available over the next few days to schedule a meeting?"""
@@ -89,7 +89,7 @@ for recipient in recipients_noads:
     email_body = "To: {}\n".format(email) + email_body
     bcc_email = "afplakmarketing@gmail.com" # replace with bcc'd email address
     email_body = "Bcc: {}\n".format(bcc_email) + email_body
-    email_body = "Date: {}\n".format(email.utils.formatdate(localtime=True)) + email_body
+    email_body = "Date: {}\n".format(util_date) + email_body
     email_body = "Message-ID: <{}@{}>\n".format(str(uuid.uuid1()), sender_email) + email_body
     email_body = "Content-Type: text/plain; charset=UTF-8\n" + email_body
     server.sendmail(sender_email, [email, bcc_email], email_body) #all the above part is for complying withRFC 5322 Guidelines
@@ -118,7 +118,7 @@ for recipient in recipients_ads:
     email_body = "To: {}\n".format(email) + email_body
     bcc_email = "afplakmarketing@gmail.com" # replace with bcc'd email address
     email_body = "Bcc: {}\n".format(bcc_email) + email_body
-    email_body = "Date: {}\n".format(email.utils.formatdate(localtime=True)) + email_body
+    email_body = "Date: {}\n".format(util_date) + email_body
     email_body = "Message-ID: <{}@{}>\n".format(str(uuid.uuid1()), sender_email) + email_body
     email_body = "Content-Type: text/plain; charset=UTF-8\n" + email_body
     server.sendmail(sender_email, [email, bcc_email], email_body) #all the above part is for complying withRFC 5322 Guidelines
