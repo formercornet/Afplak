@@ -21,7 +21,7 @@ noads_line = "While visiting your Facebook page, I noticed that you do not run a
 ads_line = "While visiting your Facebook page, I noticed that you run ads. How are they performing? Based on your website & products, I bet you're smashing it!"
 
 # Fixed email template
-template = """Subject:[email_subject]
+template = """Subject:email_subject
 
 Dear [Name],
 
