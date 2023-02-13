@@ -11,7 +11,7 @@ password = "" #password removed for security reasons!!!
 
 util_date = email.utils.formatdate(localtime=True)
 # The CSV file containing recipient information
-csv_file = "Afplakleadstest.csv"
+csv_file = "Afplak_leads.csv"
 
 # The file to store used emails
 sent_file = "sent_emails.txt"
@@ -35,7 +35,7 @@ Dear [Name],
 
 Best regards,
 
-Hussain
+Hussain Badreddeen
 Marketing Director
 
 """ 
@@ -97,8 +97,11 @@ for recipient in recipients_noads:
     print(sender_email)
     print(email)
     print(email_body)
-    # Add a delay of 120 seconds between each email sent
-    time.sleep(20)
+    # Add a delay of 30 seconds between each email sent
+    time.sleep(30)
+    # Save the list of used emails to the sent file
+    with open(sent_file, "w") as file: # added + indented to adjust file after each sent email instead of at the end of script
+      file.write("\n".join(sent_emails))
 
 for recipient in recipients_ads:
     email = recipient[1].strip()
@@ -124,11 +127,11 @@ for recipient in recipients_ads:
     print(sender_email)
     print(email)
     print(email_body)
-    # Add a delay of 120 seconds between each email sent
-    time.sleep(20)
+    # Add a delay of 30 seconds between each email sent
+    time.sleep(30)
 # Save the list of used emails to the sent file
-with open(sent_file, "w") as file:
-    file.write("\n".join(sent_emails))
+    with open(sent_file, "w") as file: #indented to adjust file after each sent email instead of at the end of script
+      file.write("\n".join(sent_emails))
 
 
 
