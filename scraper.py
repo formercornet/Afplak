@@ -14,7 +14,7 @@ def get_websites():
     # Define the URL pattern and range of pages to scrape
     url_pattern = "https://myip.ms/browse/sites/{page_num}/own/376714/cntVisitors/200/cntVisitorsii/1000"
     start_page = num 
-    end_page = num + 10
+    end_page = num + 20
 
     # Define a list of user agents to use for rotating requests
 
