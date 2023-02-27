@@ -9,13 +9,15 @@ import requests
 def get_websites():
 
     with open("pages_num.txt", "r") as file:
-        num = file.read
+        num = file.read()
         num = int(num) + 1
     # Define the URL pattern and range of pages to scrape
     url_pattern = "https://myip.ms/browse/sites/{page_num}/own/376714/cntVisitors/200/cntVisitorsii/1000"
     start_page = num 
     end_page = num + 20
-
+    
+    with open('websites_now.txt', 'w', encoding='utf-8') as file:
+                file.write()
     # Define a list of user agents to use for rotating requests
 
     print("program starting")
@@ -45,16 +47,16 @@ def get_websites():
             print(website_name)
             with open('websites.txt', 'a', encoding='utf-8') as file:
                 file.write("{0}\n".format(website_name))
-            with open('websites_now.txt', 'w', encoding='utf-8') as file:
+            with open('websites_now.txt', 'a', encoding='utf-8') as file:
                 file.write("{0}\n".format(website_name))
         
         # Wait for 10 seconds before continuing to the next page
         print("Page {0} done!".format(page_num))
         time.sleep(10) # replace with an appropriate duration based on the human verification requirements
-    
+    file.close()
     # Close the browser when finished
     with open("pages_done", "w") as file:
-        file.write(page_num) 
+        file.write(end_page) 
 
     driver.quit()
 
@@ -62,7 +64,7 @@ def email_scrape():
 
    
     hyper_text_string = "https://"
-    websites_file = "websites.txt"
+    websites_file = "websites_now.txt"
     output_file = "leads.csv"
 
     # open the websites file and read each line
@@ -116,7 +118,5 @@ def email_scrape():
             # print an error message if the website cannot be accessed or parsed
             print(f"Error processing {website}")
             num_websites -= 1
-
-        
 
 email_scrape()
