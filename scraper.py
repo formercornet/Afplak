@@ -119,4 +119,4 @@ def email_scrape():
             print(f"Error processing {website}")
             num_websites -= 1
 
-get_websites()
+email_scrape()
