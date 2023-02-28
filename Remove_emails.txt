@@ -17,3 +17,4 @@ vendors@layout.theme.js
 vendors@template.index
 vendors@layout.theme.css
 name@email.com
+support@gist-apps.com
