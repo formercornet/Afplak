@@ -17,7 +17,7 @@ def get_websites():
     end_page = num + 20
     
     with open('websites_now.txt', 'w', encoding='utf-8') as file:
-                file.write()
+                file.write('')
     # Define a list of user agents to use for rotating requests
 
     print("program starting")
@@ -119,4 +119,4 @@ def email_scrape():
             print(f"Error processing {website}")
             num_websites -= 1
 
-email_scrape()
+get_websites()
