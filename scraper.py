@@ -1,3 +1,4 @@
+from pprint import pprint
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
@@ -119,4 +120,26 @@ def email_scrape():
             print(f"Error processing {website}")
             num_websites -= 1
 
-email_scrape()
+welcome = """Afplak
+-----------------------------------------
+Hey welcome to the best program ever made!
+-----------------------------------------
+Press '1' for website scraper
+Press '2' for email scraper
+-----------------------------------------"""
+y = "x"
+
+while y!="y":
+    print(welcome)
+    x = input()
+    if x == "1":
+        print("You selected 1 for website scraping, are you sure? (Y/N)")
+        y = input().lower()
+        if y == "y":
+            get_websites    
+    elif x == "2":
+        print("You selected 2 for email scraping, are you sure? (Y/N)")
+        y = input().lower()
+        if y == "y":
+            email_scrape()
+
