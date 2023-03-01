@@ -136,7 +136,7 @@ while y!="y":
         print("You selected 1 for website scraping, are you sure? (Y/N)")
         y = input().lower()
         if y == "y":
-            get_websites    
+            get_websites()   
     elif x == "2":
         print("You selected 2 for email scraping, are you sure? (Y/N)")
         y = input().lower()
