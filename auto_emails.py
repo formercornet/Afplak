@@ -103,23 +103,23 @@ for i in range(len(all_emails)):
     emails = all_emails[i]
     if len(emails) > 1:
         counter += 1
-        #print("Please select a email from the following: ")
-        #for j in range(len(emails)):
-        #    print("{0} ({1}) \n".format((j+1), emails[j]))
-        #    print("")
-        #email_selection = int(input())
-        #try:
-        #    all_emails[i] = emails[(email_selection)-1]
-        #except:
-        #    print("Error")
+        print("Please select a email from the following: ")
+        for j in range(len(emails)):
+           print("{0} ({1}) \n".format((j+1), emails[j]))
+           print("")
+        email_selection = int(input())
+        try:
+           all_emails[i] = emails[(email_selection)-1]
+        except:
+           print("Error")
 
-        #print(all_emails[i])
+        print(all_emails[i])
 print(counter)        
 file = open("sent_emails.txt", "a")
 
 
 sender_ali = "Ali Nazeer"
-sender_seeno = "Hussain Badredeen"
+sender_seeno = "Hussain Badreddeen"
 half = 0
 c = 0
 email_total = len(all_emails)
@@ -140,7 +140,7 @@ for i in range(len(all_emails)):
         seeno_c += 1
        
     # Skip this recipient if their email has already been sent
-    #if email in sent_emails:
+    # if email in sent_emails:
     #    continue
 
     # Fill in the recipient's name, personalized line 1, and the message in the email template
@@ -157,13 +157,13 @@ for i in range(len(all_emails)):
     email_body = "Date: {}\n".format(util_date) + email_body
     email_body = "Message-ID: <{}@{}>\n".format(str(uuid.uuid1()), sender_email) + email_body
     email_body = "Content-Type: text/plain; charset=UTF-8\n" + email_body
-    #try:
-    #    server.sendmail(sender_email, email, email_body.encode('utf-8')) #all the above part is for complying withRFC 5322 Guidelines
-    #    c += 1
+    try:
+       server.sendmail(sender_email, email, email_body.encode('utf-8')) #all the above part is for complying withRFC 5322 Guidelines
+       c += 1
         
-    #except:
-    #    print("error, failed sending for {0}".format(email))
-    #    email_total -= 1 
+    except:
+       print("error, failed sending for {0}".format(email))
+       email_total -= 1 
     c += 1
     sent_emails.add(email)
     print(email_body)
@@ -176,5 +176,7 @@ for i in range(len(all_emails)):
 print("Ali: ",ali_c)
 print("Hussain: ",seeno_c)
 
+# Close the connection with the SMTP server
+server.quit()
         
 
