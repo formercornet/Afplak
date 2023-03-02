@@ -76,8 +76,8 @@ with open(csv_file, newline='') as csvfile:
     next(reader)  # skip header row
     rows_to_keep = []
     for row in reader:
-        if row[2].strip() != '':  # check if the cell is not empty
-            name_column = row[8]
+        if row[2].strip() != '':
+            name_column = row[7]
             email_column = row[2]  # third column
             names = name_column.split(",")
             emails = email_column.split(',')
@@ -129,7 +129,8 @@ seeno_c = 0
 ali_seeno = ["Ali Nazeer", "Hussain Badreddeen"]
 for i in range(len(all_emails)):
 
-    email = all_emails[i][0]    
+    email = all_emails[i][0]
+    email.lstrip()
     name = all_names[i][0]
     email_subject = name
     half += 1
@@ -140,8 +141,8 @@ for i in range(len(all_emails)):
         seeno_c += 1
        
     # Skip this recipient if their email has already been sent
-    # if email in sent_emails:
-    #    continue
+    #if email in sent_emails:
+    #   continue
 
     # Fill in the recipient's name, personalized line 1, and the message in the email template
     #if half < ((len(all_emails)) / 2):
@@ -164,10 +165,10 @@ for i in range(len(all_emails)):
     except:
        print("error, failed sending for {0}".format(email))
        email_total -= 1 
-    c += 1
+    
     sent_emails.add(email)
     print(email_body)
-    print("{0}/{1} done".format(c, len(all_emails)))
+    print("{0}/{1} done".format(c, email_total))
     
     # Add a delay of 30 seconds between each email sent
     time.sleep(7)
@@ -176,7 +177,6 @@ for i in range(len(all_emails)):
 print("Ali: ",ali_c)
 print("Hussain: ",seeno_c)
 
-# Close the connection with the SMTP server
-server.quit()
+
         
 

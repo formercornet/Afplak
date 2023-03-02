@@ -13,8 +13,13 @@ with open('leads.csv', 'r') as f, open('output.csv', 'w', newline='') as out_f:
     header = next(reader)
     writer.writerow(header) # write header to output file
     for row in reader:
-        if not any(banned_word in row[2] for banned_word in blacklist):
-            writer.writerow(row)
+        emails = row[2].split(",")
+        cleaned_emails = []
+        for email in emails:
+            if not any(banned_word in email for banned_word in blacklist):
+                cleaned_emails.append(email)
+        row[2] = ",".join(cleaned_emails)
+        writer.writerow(row)
 
 # remove original file
 os.remove('leads.csv')

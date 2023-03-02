@@ -77,7 +77,7 @@ def email_scrape():
     # open the output file and write the header row
     with open(output_file, "w", newline="") as f:
         writer = csv.writer(f)
-        writer.writerow(["Website", "Company Name", "Email", "Phone Number", "Facebook", "Twitter", "LinkedIn", "Instagram"])
+        writer.writerow(["Website", "Company Name", "Email", "Facebook", "Twitter", "LinkedIn", "Instagram","Name"])
     # loop through each website and extract the requested information
     for website in websites:
         try:
@@ -90,7 +90,8 @@ def email_scrape():
             # search for email addresses in the HTML content of the website
             email_regex = r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.(?!jpg|png|io)[A-Za-z]{2,}\b"
             emails = set(re.findall(email_regex, str(soup)))
-        
+            if emails == set():
+                continue           
             # search for phone numbers in the HTML content of the website
             phone_regex = r"\+?\d{0,3}[-.\s]?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}\b"
             phones = set(re.findall(phone_regex, str(soup)))
@@ -110,10 +111,11 @@ def email_scrape():
 
             print("{0}/{1} done".format(c, num_websites))
             c += 1
+            name = website.split(".")[0]
             # write the extracted information to the output file
             with open(output_file, "a", newline="") as f:
                 writer = csv.writer(f)
-                writer.writerow([website, company_name, ", ".join(emails), ", ".join(phones), social_media["Facebook"], social_media["Twitter"], social_media["LinkedIn"], social_media["Instagram"]])
+                writer.writerow([website, company_name, ", ".join(emails), social_media["Facebook"], social_media["Twitter"], social_media["LinkedIn"], social_media["Instagram"],name])
                 
         except:
             # print an error message if the website cannot be accessed or parsed
