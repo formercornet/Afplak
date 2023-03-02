@@ -25,3 +25,5 @@ info@yourwebsite.com
 firstname.lastname@service.com
 me@email.com
 example@yourdomain.com
+user@gmail.com
+email@newsletter.com
