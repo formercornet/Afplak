@@ -21,9 +21,9 @@ Hey [name],
 
 I know you get a bunch of emails like this so I don't wanna waste your time.
 
-We'll do a 30 day trial period for free to generate sales. It's definitely worth a chat?
+I'll do a 30 day trial period for free to generate sales. It's definitely worth a chat!
 
-If you're interested, reply to this email and we'll schedule a meeting.
+If you're interested, reply to this email and I'll schedule a meeting.
 
 Thanks,
 
@@ -31,33 +31,6 @@ Thanks,
 Marketing Director
 
 """ 
-
-
-#sender = "0"
-#correct = "0"
-#while sender != "1" or sender != "2" or correct != "y":
-#    sender_choose = """'1' if you're Ali 
-#'2' if you're Seeno"""
-#    print(sender_choose)
-#    sender = input()
-#    if sender == "1":
-#        print("You're Ali correct?")
-#        correct = input("Y/N: ").lower()
-#        if correct == "y":
-#            sender = "Ali Nazeer"
-#            print("Welcome {0}!".format(sender))
-#            break
-#        elif correct == "n":
-#           continue
-#    elif sender == "2":
-#        print("You're Seeno correct?")
-#        correct = input("Y/N: ").lower()
-#        if correct == "y":
-#            sender = "Hussain Badreddeen"
-#            print("Welcome {0}!".format(sender))
-#            break
-#        elif correct == "n":
-#           continue
 
 #Connect to the GoDaddy SMTP server
 server = smtplib.SMTP_SSL("smtpout.secureserver.net", 465)
