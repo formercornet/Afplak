@@ -56,8 +56,8 @@ def get_websites():
         time.sleep(10) # replace with an appropriate duration based on the human verification requirements
     file.close()
     # Close the browser when finished
-    with open("pages_done", "w") as file:
-        file.write(end_page) 
+    with open("pages_num.txt", "w") as file:
+        file.write(str(end_page)) 
 
     driver.quit()
 
