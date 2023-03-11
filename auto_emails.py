@@ -124,7 +124,8 @@ for i in range(len(all_emails)):
     #else:
     #    email_body = template.replace("[name]", name).replace("[email_subject]", email_subject).replace("[sender]", sender_seeno)
         
-    
+    if email == "":
+        continue
     # Send the email
     email_body = "From: {}\n".format(sender_email) + email_body
     email_body = "To: {}\n".format(email) + email_body
