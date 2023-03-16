@@ -43,6 +43,7 @@ user@gmail.com
 user@example.com
 username@example.com
 nomeutente@example.com
+mail@exemple.cat
 john.smith@example.com
 john@example.com
 john@email.com
@@ -91,3 +92,4 @@ your@email.address
 www.www.Support@TrendyforHer.com.com.com
 name@gmail.com
 info@company.com
+abc@xyz.fr
