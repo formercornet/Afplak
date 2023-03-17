@@ -12,6 +12,7 @@ youremail@domain.com
 your-email@email.com
 your-email@example.com
 Someone-email@example.com
+name@example.com
 user@gmail.com
 user@example.com
 username@example.com
@@ -30,6 +31,7 @@ example@example.com
 eksempel@mail.dk
 ejemplo@ejemplo.com
 exemple@gmail.com
+exemple@mail.com
 examplo@gmail.com
 exemplo@gmail.com
 exemplo@seudominio.com
