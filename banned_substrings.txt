@@ -46,9 +46,12 @@ user@example.com
 username@example.com
 nomeutente@example.com
 mail@exemple.cat
+webmaster@example.com
+jane.doe@example.com
 john.smith@example.com
 john@example.com
 john@email.com
+john@doe.com
 test@example.com
 example@domain.com
 example@mail.com
