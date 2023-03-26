@@ -6,6 +6,7 @@ jouw@email.com
 enter@email.com
 hi@email.com
 you@email.com
+yours@email.com
 youremail@domain.com
 your@email.com
 youremail@domain.com
@@ -17,6 +18,8 @@ user@gmail.com
 user@example.com
 username@example.com
 nomeutente@example.com
+u003esomeone@example.com
+someone@example.com
 mail@exemple.cat
 webmaster@example.com
 jane.doe@example.coms
@@ -42,6 +45,7 @@ e-post@exempel.com
 e-mail@exemple.com
 e-mail@exemplo.com
 email@example.com
+email@company.com
 email@mail.com
 email@website.com
 email@newsletter.com
@@ -84,3 +88,5 @@ www.www.Support@TrendyforHer.com.com.com
 name@gmail.com
 info@company.com
 abc@xyz.fr
+abc@email.com
+enter@youremail.com
