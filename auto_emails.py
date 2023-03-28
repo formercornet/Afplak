@@ -80,9 +80,9 @@ for i in range(len(all_emails)):
         for j in range(len(emails)):
            print("{0} ({1}) \n".format((j+1), emails[j]))
            print("")
-        email_selection = int(input())
+        email_selection = input()
         try:
-           all_emails[i] = emails[(email_selection)-1]
+           all_emails[i] = emails[(int(email_selection))-1]
         except:
            print("Error")
 
@@ -102,8 +102,7 @@ seeno_c = 0
 ali_seeno = ["Ali Nazeer", "Hussain Badreddeen"]
 for i in range(len(all_emails)):
 
-    email = all_emails[i][0]
-    email.lstrip()
+    email = (all_emails[i]).strip() #it has a problem with the index 0. some are in lists and some are only string thats why it gets first letter only
     name = all_names[i][0]
     email_subject = name
     half += 1

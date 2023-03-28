@@ -29,11 +29,12 @@ with open('leads.csv', 'r') as f, open('output.csv', 'w', newline='') as out_f:
     header = next(reader)
     writer.writerow(header) # write header to output file
     for row in reader:
+        if row[2] == "":
+            continue
         emails = row[2].split(",")
         cleaned_emails = clean_emails(emails)
         row[2] = ",".join(cleaned_emails)
         writer.writerow(row)
-
 # remove original file
 os.remove('leads.csv')
 

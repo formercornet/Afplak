@@ -90,3 +90,6 @@ info@company.com
 abc@xyz.fr
 abc@email.com
 enter@youremail.com
+kevin.b.chappell@gmail.com
+examplo@seuemail.com
+mail@example.com
