@@ -85,6 +85,7 @@ your.address@email.com
 Joe@voorbeeld.com
 your@email.address
 www.www.Support@TrendyforHer.com.com.com
+email@gmail.com
 name@gmail.com
 info@company.com
 abc@xyz.fr
@@ -93,3 +94,5 @@ enter@youremail.com
 kevin.b.chappell@gmail.com
 examplo@seuemail.com
 mail@example.com
+you@domain.com
+JOHN.SMITH@EXAMPLE.COM
