@@ -23,6 +23,8 @@ exemplo@
 @ejemplo
 ejemplo@
 @esempio.it
+@esempio
+esempio@
 @eksempel.com
 @beispielemai.de
 vendors@layout.theme.js
@@ -58,6 +60,8 @@ someone@example.com
 mail@exemple.cat
 webmaster@example.com
 jane.doe@example.com
+JOHN.SMITH@EXAMPLE.COM
+john@smith.com
 john.smith@example.com
 john@example.com
 john@email.com
@@ -114,3 +118,5 @@ abc@xyz.fr
 abc@email.com
 enter@youremail.com
 you@domain.com
+Yourmail@email.com
+kevin.b.chappell@gmail.com
