@@ -73,9 +73,7 @@ if start.lower() != "yes":
 counter = 0
 for i in range(len(all_emails)):
     flag = False
-    # if emails.
-    emails = all_emails[0] #test this kanet 0 then changed to i not working so changed back to 0
-    print(emails)
+    emails = all_emails[i] 
     if len(emails) > 1:
         counter += 1
         print("Please select a email from the following: ")
@@ -103,7 +101,6 @@ ali_c = 0
 seeno_c = 0
 ali_seeno = ["Ali Nazeer", "Hussain Badreddeen"]
 for i in range(len(all_emails)):
-
     try:
         email = (all_emails[i]).strip()
     except:
