@@ -104,7 +104,10 @@ seeno_c = 0
 ali_seeno = ["Ali Nazeer", "Hussain Badreddeen"]
 for i in range(len(all_emails)):
 
-    email = (all_emails[i]).strip() #it has a problem with the index 0. some are in lists and some are only string thats why it gets first letter only
+    try:
+        email = (all_emails[i]).strip()
+    except:
+        email = (all_emails[i][0]).strip() 
     name = all_names[i][0]
     email_subject = name
     half += 1
