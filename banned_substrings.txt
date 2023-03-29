@@ -3,6 +3,11 @@ IMG_
 @2x.JPG
 @2x
 @3x
+.js
+.css
+.sentry
+.min.js
+.min.css
 @astrojs
 vendors@
 .progressive
@@ -11,6 +16,8 @@ vendors@
 @template
 @layout
 @theme
+@sentry
+@example
 example@
 exemplo@
 @ejemplo
@@ -101,7 +108,9 @@ Joe@voorbeeld.com
 your@email.address
 www.www.Support@TrendyforHer.com.com.com
 name@gmail.com
+email@gmail.com
 info@company.com
 abc@xyz.fr
 abc@email.com
 enter@youremail.com
+you@domain.com
