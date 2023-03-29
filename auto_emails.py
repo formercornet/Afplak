@@ -73,7 +73,9 @@ if start.lower() != "yes":
 counter = 0
 for i in range(len(all_emails)):
     flag = False
-    emails = all_emails[i]
+    # if emails.
+    emails = all_emails[0] #test this kanet 0 then changed to i not working so changed back to 0
+    print(emails)
     if len(emails) > 1:
         counter += 1
         print("Please select a email from the following: ")
@@ -143,7 +145,7 @@ for i in range(len(all_emails)):
     print(email_body)
     print("{0}/{1} done".format(c, email_total))
     
-    # Add a delay of 30 seconds between each email sent
+    # Add a delay of 7 seconds between each email sent
     time.sleep(7)
     # Save the list of used emails to the sent file
     file.write("{0}\n".format(email))
