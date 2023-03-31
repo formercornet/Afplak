@@ -18,6 +18,7 @@ vendors@
 @theme
 @sentry
 @example
+@email
 example@
 exemplo@
 @ejemplo
