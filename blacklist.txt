@@ -100,3 +100,8 @@ you@domain.com
 Yourmail@email.com
 esempio@mail.com
 utente@esempio.com
+kisjanos@pelda.hu
+ula@gmail.com
+jan.novak@server.cz
+test@test.com
+boutique@gmail.com
