@@ -18,14 +18,17 @@ def clean_emails(emails):
     cleaned_emails = []
     seen_emails = set()
     for email in emails:
-        if email.lower().find("u003e") != -1:
-                temp_email = email.lower().strip("u003")
-                email = temp_email[1]
-        if email.lower() not in seen_emails and not any(banned_substring in email.lower() for banned_substring in banned_substrings) and email.lower() not in blacklist and email.lower() not in cleaned_emails:
-            cleaned_emails.append(email.lower())
-            seen_emails.add(email.lower())
-        
+        # convert to lowercase and strip leading/trailing whitespace
+        email = email.lower().strip()
+        # remove "<" and ">" characters from email address if present
+        if email.startswith("<") and email.endswith(">"):
+            email = email[1:-1]
+        if email not in seen_emails and not any(banned_substring in email for banned_substring in banned_substrings) and email not in blacklist:
+            cleaned_emails.append(email)
+            seen_emails.add(email)
     return cleaned_emails
+
+
 
 with open('leads.csv', 'r') as f, open('output.csv', 'w', newline='') as out_f:
     reader = csv.reader(f)
