@@ -23,10 +23,14 @@ def clean_emails(emails):
         # remove "<" and ">" characters from email address if present
         if email.startswith("<") and email.endswith(">"):
             email = email[1:-1]
+        # removes "u003e" from start of emails if present
+        if email.startswith("u003e"):
+            email = email[5:]
         if email not in seen_emails and not any(banned_substring in email for banned_substring in banned_substrings) and email not in blacklist:
             cleaned_emails.append(email)
             seen_emails.add(email)
     return cleaned_emails
+
 
 
 
