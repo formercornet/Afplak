@@ -140,7 +140,8 @@ for i in range(len(all_emails)):
     except:
        print("error, failed sending for {0}".format(email))
        email_total -= 1 
-    
+    #if c == 500:
+    #    break
     sent_emails.add(email)
     print(email_body)
     print("{0}/{1} done".format(c, email_total))
