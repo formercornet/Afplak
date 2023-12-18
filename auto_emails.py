@@ -8,7 +8,7 @@ import random
 
 # Your GoDaddy email address and password
 sender_email = "marketing@afplak.com"
-password = "GV$BZ&r2f%Ks" #password removed for security reasons!!!
+password = "" #password removed for security reasons!!!
 
 util_date = email.utils.formatdate(localtime=True)
 # The CSV file containing recipient information
